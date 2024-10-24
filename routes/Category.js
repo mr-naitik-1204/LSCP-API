@@ -19,6 +19,6 @@ router.post('/Create',upload.single('image'),AM.tokensecure,CC.Create)
 router.get('/Suerch/:id',AM.tokensecure,CC.Suerch)
 router.get('/show',AM.tokensecure,CC.show)
 router.delete('/Delete/:id',AM.tokensecure,CC.Delete)
-router.patch('/updete/:id',AM.tokensecure,CC.updete)
+router.patch('/updete/:id',upload.single('image'),AM.tokensecure,CC.updete)
 
 module.exports = router;

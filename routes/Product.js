@@ -20,6 +20,6 @@ router.post('/Create',upload.single('image'),AM.tokensecure,PC.Create)
 router.get('/Suerch/:id',AM.tokensecure,PC.Suerch)
 router.get('/show',AM.tokensecure,PC.show)
 router.delete('/Delete/:id',AM.tokensecure,PC.Delete)
-router.patch('/updete/:id',AM.tokensecure,PC.updete)
+router.patch('/updete/:id',upload.single('image'),AM.tokensecure,PC.updete)
 
 module.exports = router;

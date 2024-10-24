@@ -5,6 +5,8 @@ const cetegory = require('../modal/Category')
 exports.Create = async (req, res) => {
     req.body.image=req.file.filename
     const data = req.body
+    // console.log("----"+data);
+    
     try {
         const createdata = await cetegory.create(data)
         res.status(200).json({
@@ -84,7 +86,9 @@ exports.Delete = async (req, res) => {
 
 exports.updete = async (req, res) => {
     const Id = req.params.id;
-    console.log(req.body);
+    console.log("++-+---+-"+req.body.title);
+    console.log(Id);
+    
     
     try {
         const updetedata = await cetegory.findByIdAndUpdate(Id,req.body)
@@ -92,7 +96,7 @@ exports.updete = async (req, res) => {
             status: "success",
             Message: 'data updete succes',
             Data: updetedata
-        })
+        }) 
     } catch (error) {
         res.status(404).json({
             status: "fail",

@@ -41,7 +41,7 @@ exports.Suerch = async (req, res) => {
 
 exports.show = async (req, res) => {
     try {
-        const showdata = await cetegory.find()
+        const showdata = await cetegory.find().populate("Categoryid")
         res.status(200).json({
             status: "success",
             Message: 'data show succes',
